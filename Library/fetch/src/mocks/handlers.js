@@ -3,6 +3,14 @@ import { rest } from 'msw';
 const url = 'https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json';
 
 export const handlers = [
+  rest.put('http://localhost:3000/counter/increment', async(req, res, ctx) => {
+    const { value } = req.body;
+    return res(
+      ctx.json({
+        value: value + 2,
+      })
+    )
+  }),
   rest.get(url, async( req, res, ctx) => {
     const id = req.url.searchParams.get('id')
 

@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <TestMocking />
       <Counter />
-      <br />
-      <Counter2 />
+      {/* <br />
+      <Counter2 /> */}
     </div>
   );
 }
